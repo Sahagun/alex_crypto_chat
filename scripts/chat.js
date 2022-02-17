@@ -13,6 +13,12 @@ async function getAccount() {
   const account = accounts[0];
   console.log(account);
 
+  const encrypted = web3.eth.sign("HelloWorld", account)
+  const decrypted = web3.eth.sign(encrypted, account)
+
+  console.log(encrypted);
+  console.log(decrypted);
+
   showAccount.innerHTML = account;
 }
 
